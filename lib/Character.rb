@@ -2,22 +2,20 @@
 class Character 
     attr_accessor :name, :occupation, :status, :appearance, :portrayed
 
-    @@all = []
 
 
-    def initialize(name, occupation, status, appearance, portrayed)
-        @name = name
-        @occupation = occupation
-        @status = status
-        @appearance = appearance
-        @portrayed = portrayed
-        @@all << self
+    def initialize(hash)
+
+        hash.each do |key, value|
+            self.send("#{key}=" , value)
+        end
     end
-
-    def self.all
-        @@all
-    end
-
 end
 
 
+# @name = name
+#         @occupation = occupation
+#         @status = status
+#         @appearance = appearance
+#         @portrayed = portrayed
+#         @@all << self

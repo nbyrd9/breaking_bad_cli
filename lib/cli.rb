@@ -4,14 +4,14 @@ class Cli
         puts "----------"
         puts "Welcome to the Breaking Bad Experience. Tread Lightly."
         puts "----------"
-        sub_heading
+        self.sub_heading
         character_options
     end
 
     def sub_heading
         puts "Please choose a character to retrieve more information."
-            #     Api.get_character_info
         input = gets.chomp
+        Api.get_character_info(input)
     end
     
     def character_options
@@ -22,21 +22,21 @@ class Cli
         puts "5. Hank Schrader"
     end
 
-    # def user_input
-    #     input = gets.strip
+    def user_input
+        input = gets.strip
+        if input == "1"
+            puts "The character you selected is Walter White."
+        elsif input == "2"
+            puts "The #{character.new} you selected is #{character.name}."
+        elsif input == "3"
+            puts "The #{character.new} you selected is #{character.name}."
+        elsif input == "4"
+            puts "The #{character.new} you selected is #{character.name}."
+        elsif input =="5"
+            puts "The #{character.new} you selected is #{character.name}."
+        end
 
-    #     if input == "1"
-    #         puts "The #{character.new} you selected is #{character.name}."
-    #     elsif input == "2"
-    #         puts "The #{character.new} you selected is #{character.name}."
-    #     elsif input == "3"
-    #         puts "The #{character.new} you selected is #{character.name}."
-    #     elsif input == "4"
-    #         puts "The #{character.new} you selected is #{character.name}."
-    #     elsif input =="5"
-    #         puts "The #{character.new} you selected is #{character.name}."
-    #     end
-    # end
+    end
 
     def character_info(character)
         puts "Name: #{character.name}"

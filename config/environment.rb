@@ -5,7 +5,7 @@ require_relative('../lib/api')
 require_relative('../lib/cli')
 require_relative('../lib/Character')
 
-url = "https://www.breakingbadapi.com/api/characters/1" 
+url = "https://www.breakingbadapi.com/api/characters" 
 
 response = HTTParty.get(url) 
 
