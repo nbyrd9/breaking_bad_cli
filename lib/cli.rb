@@ -21,18 +21,26 @@ class Cli
         puts "5. Hank Schrader"
     end
 
-    def user_input(char)
+    def user_input
         input = gets.strip
         if input == "1"
             puts "The #{character.new} you selected is #{character.name}."
         elsif input == "2"
-
+            puts "The #{character.new} you selected is #{character.name}."
         elsif input == "3"
-
+            puts "The #{character.new} you selected is #{character.name}."
         elsif input == "4"
-
+            puts "The #{character.new} you selected is #{character.name}."
         elsif input =="5"
-
+            puts "The #{character.new} you selected is #{character.name}."
         end
     end
+
+    def character_info(character)
+        puts "Name: #{character.name}"
+        puts "Occupations: #{character.occupation}"
+        puts "Status: #{character.status}"
+        puts "Appearance: #{character.appearance}"
+        puts "Portrayed By: #{character.portrayed}"
+    end 
 end
