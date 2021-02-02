@@ -10,6 +10,7 @@ class Cli
 
     def sub_heading
         puts "Please choose a character to retrieve more information."
+            #     Api.get_character_info
         input = gets.chomp
     end
     
@@ -21,20 +22,21 @@ class Cli
         puts "5. Hank Schrader"
     end
 
-    def user_input
-        input = gets.strip
-        if input == "1"
-            puts "The #{character.new} you selected is #{character.name}."
-        elsif input == "2"
-            puts "The #{character.new} you selected is #{character.name}."
-        elsif input == "3"
-            puts "The #{character.new} you selected is #{character.name}."
-        elsif input == "4"
-            puts "The #{character.new} you selected is #{character.name}."
-        elsif input =="5"
-            puts "The #{character.new} you selected is #{character.name}."
-        end
-    end
+    # def user_input
+    #     input = gets.strip
+
+    #     if input == "1"
+    #         puts "The #{character.new} you selected is #{character.name}."
+    #     elsif input == "2"
+    #         puts "The #{character.new} you selected is #{character.name}."
+    #     elsif input == "3"
+    #         puts "The #{character.new} you selected is #{character.name}."
+    #     elsif input == "4"
+    #         puts "The #{character.new} you selected is #{character.name}."
+    #     elsif input =="5"
+    #         puts "The #{character.new} you selected is #{character.name}."
+    #     end
+    # end
 
     def character_info(character)
         puts "Name: #{character.name}"

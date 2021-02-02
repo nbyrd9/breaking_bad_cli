@@ -5,7 +5,7 @@ class Character
     @@all = []
 
 
-    def initialize
+    def initialize(name, occupation, status, appearance, portrayed)
         @name = name
         @occupation = occupation
         @status = status
