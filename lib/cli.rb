@@ -28,15 +28,15 @@ class Cli
     
     def user_input(char)
         input = gets.chomp
-        if input == "1" 
+        if input.include?("1") ||  input.include?("Birthday")
             puts "#{char.name} was born on #{char.birthday}."
-        elsif input == "2" 
-            puts "#{char.name} was employed at #{char.occupation}."
-        elsif input == "3" 
+        elsif input.include?("2") ||  input.include?("Occupation") 
+            puts "Throughout the show, #{char.name} was a #{char.occupation}."
+        elsif input.include?("3") ||  input.include?("Status") 
             puts "#{char.name} was #{char.status} at the end of the series."
-        elsif input == "4"
+        elsif input.include?("4") ||  input.include?("Appearance")
             puts "#{char.name} appeared in seasons #{char.appearance}."
-        elsif input == "5"
+        elsif input.include?("5") ||  input.include?("Portrayed By")  || input.include?("Portrayed")
             puts "#{char.name} is portrayed by #{char.portrayed}."
         else
             puts "Sorry! That selection was invalid."
@@ -46,22 +46,3 @@ class Cli
 end
 
 
-
-
-
-    # def character_info(character)
-    #     puts "Name: #{character.name}"
-    #     puts "Occupations: #{character.occupation}"
-    #     puts "Status: #{character.status}"
-    #     puts "Appearance: #{character.appearance}"
-    #     puts "Portrayed By: #{character.portrayed}"
-    # end 
-
-    # def view_character(char)
-    #     puts "Birthday: #{char.birthday}"
-    #     puts "Occupation: #{char.occupation}"
-    #     puts "Status: #{char.status}"
-    #     puts "Appearance: #{char.appearance}"
-    # end
-
-    # Character.select{|key, value| key["name"]}
