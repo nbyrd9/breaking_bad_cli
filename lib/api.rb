@@ -12,8 +12,20 @@ class Api
             Character.new(info_hash)
         end
     end
-end
 
+    def self.get_character_quote
+        url = "https://www.breakingbadapi.com/api/quotes"
+        response = HTTParty.get(url)
+        binding.pry
+        response.each do |quote|
+            quote_hash = {author: quote["author"], quote: quote["quote"] }
+            Quote.new(quote.hash)
+           
+        end
+    end
+
+end
+Api.get_character_quote
 
 
 
