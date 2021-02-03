@@ -1,27 +1,23 @@
-class Cli
+require_relative('../lib/Character')
 
+class Cli
     def greeting
         puts "----------"
         puts "Welcome to the Breaking Bad Experience. Tread Lightly."
         puts "----------"
+        Api.get_character_info
         self.sub_heading
     end
 
     def sub_heading
         puts "Please enter your favorite character from Breaking Bad"
         input = gets.chomp
-        new_character = Api.get_character_info(input) 
-        self.character_options
-        user_input(input)
-        #while loop
-    end
-
-    def character_name
-        @character_name = gets.strip.split(" ")
-        @character_name.each {|name| name.capitalize }
+        new_character = Character.find_by_name(input)
+        self.character_options(new_character)
+        user_input(new_character)
     end
     
-    def character_options
+    def character_options(new_character)
         puts "Please choose from the following list to see more information"
         puts "1. Birthday"
         puts "2. Occupation"
@@ -29,42 +25,24 @@ class Cli
         puts "4. Appearance"
         puts "5. Portrayed By"
     end
-
-    def user_selection(choice)
-        if choice == @character_name
-            puts "Great choice!"
-            character_name
-            name = @character_name
-            @character = Character.all.find {|i| i.name == name.join(" ")}
-            view_character(@character)
+    
+    def user_input(char)
+        input = gets.chomp
+        if input == "1" 
+            puts "#{char.name} was born on #{char.birthday}."
+        elsif input == "2" 
+            puts "#{char.name} was employed at #{char.occupation}."
+        elsif input == "3" 
+            puts "#{char.name} was #{char.status} at the end of the series."
+        elsif input == "4"
+            puts "#{char.name} appeared in seasons #{char.appearance}."
+        elsif input == "5"
+            puts "#{char.name} is portrayed by #{char.portrayed}."
         else
-            return false
-            #add error messaging here
+            puts "Sorry! That selection was invalid."
+            #add error messaging
         end
     end
-    
-        def view_character(char)
-            puts "Birthday: #{char.birthday}"
-            puts "Occupation: #{char.occupation}"
-            puts "Status: #{char.status}"
-            puts "Appearance: #{char.appearance}"
-        end
-    
-        def user_input(new_character)
-            input = gets.chomp
-            if input == "1" || "Birthday"
-                puts "#{char.new} was born on #{char.birthday}."
-            elsif input == "2" || "Occupation"
-                puts "#{char.new} worked at #{char.occupation}."
-            elsif input == "3" || "Status"
-                puts "#{char.new} was #{char.status} at the end of the series."
-            elsif input == "4" || "Appearance"
-                puts "#{char.new} appeared in seasons #{char.name}."
-            else
-                #add error messaging here
-            end
-        end
-    
 end
 
 
@@ -79,3 +57,11 @@ end
     #     puts "Portrayed By: #{character.portrayed}"
     # end 
 
+    # def view_character(char)
+    #     puts "Birthday: #{char.birthday}"
+    #     puts "Occupation: #{char.occupation}"
+    #     puts "Status: #{char.status}"
+    #     puts "Appearance: #{char.appearance}"
+    # end
+
+    # Character.select{|key, value| key["name"]}
