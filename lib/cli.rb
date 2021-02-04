@@ -1,18 +1,32 @@
 class Cli
     def greeting
-        puts "----------"
-        puts "Welcome to the Breaking Bad Experience. Tread Lightly."
-        puts "----------"
+        puts "~~~~~~~~~~~~~~~".colorize(:green)
+        puts "Welcome to the Breaking Bad Experience. Tread Lightly.".colorize(:green)
+        puts "~~~~~~~~~~~~~~~".colorize(:green)
         Api.get_character_info 
         self.sub_heading
     end
 
     def sub_heading
-        puts "Please enter your favorite character from Breaking Bad"
+        puts "Please enter your favorite character from Breaking Bad".colorize(:yellow)
         input = gets.chomp
         new_character = Character.find_by_name(input)
+        if new_character 
         character_options(new_character)
         self.user_input(new_character)
+        else
+            begin
+                raise InputError
+            rescue InputError => error
+                puts error.message
+                input = gets.chomp
+                if input == "No"
+                    self.sub_heading
+                else
+                    puts "Thanks for visiting the Breaking Bad CLI! I hope to see you again soon."
+                end
+            end
+        end
     end
 
 
@@ -58,10 +72,9 @@ class Cli
         end
     end
 
-
     class InputError < StandardError
         def message
-            "Input not found. Please ensure the first letter of the first and last name is captitalized, and all words are spelled correctly. Would you like to exit the application?"
+            "Input not found. Please ensure the first lettes of the first and last name are captitalized, and all words are spelled correctly. Would you like to exit the application?"
         end
     end
 end
