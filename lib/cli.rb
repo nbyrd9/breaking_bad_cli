@@ -4,7 +4,14 @@ class Cli
         puts "Welcome to the Breaking Bad Experience. Tread Lightly.".colorize(:green)
         puts "~~~~~~~~~~~~~~~".colorize(:green)
         Api.get_character_info 
+        view_char_list
         self.sub_heading
+    end
+
+    def view_char_list #add gems
+        Character.all.each_with_index do |info|
+            puts info.name 
+        end
     end
 
     def sub_heading
@@ -71,7 +78,7 @@ class Cli
                 puts error.message
                 input = gets.chomp
                 if input == "No"
-                    puts "Thanks for visiting the Breaking Bad CLI! I hope to see you again soon."
+                    puts "Thanks for visiting the Breaking Bad CLI! I hope to see you again soon.".colorize(:green)
                 else
                     self.sub_heading
                     
@@ -81,7 +88,7 @@ class Cli
     end
 
     def yes_or_no
-        puts "Would you like to see something else? Please enter Yes or No"
+        puts "Would you like to see something else? Please enter Yes or No".colorize(:yellow)
         input = gets.chomp
         if input == "Yes"
             sub_heading
