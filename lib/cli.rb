@@ -48,7 +48,12 @@ class Cli
                 raise InputError
             rescue InputError => error
                 puts error.message
-                self.character_options(new_character)
+                input = gets.chomp
+                if input == "No"
+                self.sub_heading
+                else
+                    puts "Thanks for visiting the Breaking Bad CLI! I hope to see you again soon."
+                end
             end
         end
     end
@@ -56,21 +61,7 @@ class Cli
 
     class InputError < StandardError
         def message
-            "Input not found. Please ensure the first letter of the first and last name is captitalized, and all words are spelled correctly."
+            "Input not found. Please ensure the first letter of the first and last name is captitalized, and all words are spelled correctly. Would you like to exit the application?"
         end
     end
 end
-
-
-
-
-
- # def exit
-    #     puts "Would you like to see something else?"
-    #         input = gets.chomp
-    #         if input == "Yes"
-    #             first_choice(input)
-    #         else input == "No"
-    #             puts "Thanks for stopping by!"
-    #         end
-    # end
