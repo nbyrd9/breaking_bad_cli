@@ -24,17 +24,6 @@ end
 
 
         
-# Character.find_by_name
-
-
-# @name = char_info["name"]
-# @birthday = char_info["birthday"]
-# @occupation = char_info["occupation"]
-# @status = char_info["status"]
-# @appearance = char_info["appearance"]
-# @portrayed = char_info["portrayed"]
-
-# end
 
 
 

@@ -1,3 +1,5 @@
+require_relative('../lib/api')
+
 class Quote
     attr_accessor :author, :quote
    
@@ -14,7 +16,7 @@ class Quote
         @@all
     end
 
-    def self.find_by_quote(quote)
+    def self.find_by_name(quote)
         self.all.find{|info| info.quote == quote}
     end       
 end

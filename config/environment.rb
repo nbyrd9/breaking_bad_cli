@@ -5,9 +5,9 @@ require_relative('../lib/api')
 require_relative('../lib/cli')
 require_relative('../lib/Character')
 
-url = "https://www.breakingbadapi.com/api/characters" 
-
-response = HTTParty.get(url) 
+# url = "https://www.breakingbadapi.com/api/characters" 
+# url = "https://www.breakingbadapi.com/api/quotes"
+# response = HTTParty.get(url) 
 
 # binding.pry
 
