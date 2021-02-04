@@ -3,7 +3,7 @@ class Cli
         puts "----------"
         puts "Welcome to the Breaking Bad Experience. Tread Lightly."
         puts "----------"
-        Api.get_character_info #keep this in greeting
+        Api.get_character_info 
         self.sub_heading
     end
 
@@ -12,7 +12,7 @@ class Cli
         input = gets.chomp
         new_character = Character.find_by_name(input)
         character_options(new_character)
-        self.user_input(input)
+        self.user_input(new_character)
     end
 
 

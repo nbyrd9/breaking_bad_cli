@@ -1,6 +1,3 @@
-require 'pry'
-
-
 class Api 
     attr_accessor :name, :birthday, :occupation, :status, :appearance, :portrayed, :img, :nickname
     
@@ -12,8 +9,6 @@ class Api
             Character.new(info_hash)
         end
     end
-
-
 
 end
 

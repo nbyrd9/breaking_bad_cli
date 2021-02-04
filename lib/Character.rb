@@ -1,4 +1,3 @@
-
 class Character 
     attr_accessor :name, :birthday, :occupation, :status, :appearance, :portrayed, :img, :nickname
 
