@@ -23,6 +23,8 @@ class Cli
         puts "3. Status"
         puts "4. Appearance"
         puts "5. Portrayed By"
+        puts "6. Image"
+        puts "7. Nickname"
     end
     
     def user_input(char)
@@ -37,13 +39,30 @@ class Cli
             puts "#{char.name} appeared in seasons #{char.appearance}."
         elsif input == "5" ||  input.include?("Portrayed By")  || input.include?("Portrayed")
             puts "#{char.name} is portrayed by #{char.portrayed}."
+        elsif input == "6" ||  input.include?("Image")  
+            puts "Click #{char.img} to see an image of #{char.name}."
+        elsif input == "7" ||  input.include?("Nickname")  
+            puts "#{char.name} is also referred to as #{char.nickname} throughout the show."
         else
-            puts "Sorry! That selection was invalid."
-            self.character_options(new_character)
-            #add error messaging
+            begin
+                raise InputError
+            rescue InputError => error
+                puts error.message
+                self.character_options(new_character)
+            end
+        end
+    end
+
+
+    class InputError < StandardError
+        def message
+            "Input not found. Please ensure the first letter of the first and last name is captitalized, and all words are spelled correctly."
         end
     end
 end
+
+
+
 
 
  # def exit
