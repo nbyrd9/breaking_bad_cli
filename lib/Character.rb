@@ -17,15 +17,4 @@ class Character
     def self.find_by_name(name)
         self.all.find{|char| char.name == name}
     end     
-    
-    
 end
-   
-## fetch method? or select
-
-
-# def self.select_characters(name)
-#     name.select do 
-#         
-#     end
-# end

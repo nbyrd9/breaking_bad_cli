@@ -8,14 +8,15 @@ class Cli
         self.sub_heading
     end
 
-    def view_char_list #add gems
-        Character.all.each_with_index do |info|
-            puts info.name 
+    def view_char_list
+        Character.all.each do |info|
+            puts info.name.colorize(:yellow)
+            puts "---------------".colorize(:green)
         end
     end
 
     def sub_heading
-        puts "Please enter your favorite character from Breaking Bad".colorize(:yellow)
+        puts "Please enter your favorite character from Breaking Bad! Remember to type the first and last name.".colorize(:yellow)
         input = gets.chomp
         new_character = Character.find_by_name(input)
         if new_character 
@@ -96,7 +97,6 @@ class Cli
             puts "Thanks for stopping by!".colorize(:green)
         end
     end
-
 
     class InputError < StandardError
         def message
