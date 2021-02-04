@@ -20,7 +20,7 @@ class Cli
             rescue InputError => error
                 puts error.message
                 input = gets.chomp
-                if input == "No"
+                if input == "Yes"
                     self.sub_heading
                 else
                     puts "Thanks for visiting the Breaking Bad CLI! I hope to see you again soon."
@@ -45,18 +45,25 @@ class Cli
         input = gets.chomp
         if input == "1" ||  input.include?("Birthday")
             puts "#{char.name} was born on #{char.birthday}."
+            yes_or_no
         elsif input == "2" ||  input.include?("Occupation") 
             puts "Throughout the show, #{char.name} was a #{char.occupation}."
+            yes_or_no
         elsif input == "3" ||  input.include?("Status") 
             puts "#{char.name} was #{char.status} at the end of the series."
+            yes_or_no
         elsif input == "4" ||  input.include?("Appearance")
             puts "#{char.name} appeared in seasons #{char.appearance}."
+            yes_or_no
         elsif input == "5" ||  input.include?("Portrayed By")  || input.include?("Portrayed")
             puts "#{char.name} is portrayed by #{char.portrayed}."
+            yes_or_no
         elsif input == "6" ||  input.include?("Image")  
             puts "Click #{char.img} to see an image of #{char.name}."
+            yes_or_no
         elsif input == "7" ||  input.include?("Nickname")  
             puts "#{char.name} is also referred to as #{char.nickname} throughout the show."
+            yes_or_no
         else
             begin
                 raise InputError
@@ -64,17 +71,29 @@ class Cli
                 puts error.message
                 input = gets.chomp
                 if input == "No"
-                self.sub_heading
-                else
                     puts "Thanks for visiting the Breaking Bad CLI! I hope to see you again soon."
+                else
+                    self.sub_heading
+                    
                 end
             end
         end
     end
 
+    def yes_or_no
+        puts "Would you like to see something else? Please enter Yes or No"
+        input = gets.chomp
+        if input == "Yes"
+            sub_heading
+        else input == "No"
+            puts "Thanks for stopping by!".colorize(:green)
+        end
+    end
+
+
     class InputError < StandardError
         def message
-            "Input not found. Please ensure the first lettes of the first and last name are captitalized, and all words are spelled correctly. Would you like to exit the application?"
+            puts "Input not found. Please ensure the first letters of the first and last name are captitalized, and all words are spelled correctly. Would you like to continue? Enter Yes or No".colorize(:red)
         end
     end
 end
