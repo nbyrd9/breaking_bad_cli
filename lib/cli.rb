@@ -31,7 +31,7 @@ class Cli
                 if input == "Yes"
                     self.sub_heading
                 else
-                    puts "Thanks for visiting the Breaking Bad CLI! I hope to see you again soon."
+                    exit_cli
                 end
             end
         end
@@ -79,7 +79,7 @@ class Cli
                 puts error.message
                 input = gets.chomp
                 if input == "No"
-                    puts "Thanks for visiting the Breaking Bad CLI! I hope to see you again soon.".colorize(:green)
+                    exit_cli
                 else
                     self.sub_heading
                     
@@ -99,7 +99,7 @@ class Cli
     end
 
     def exit_cli
-        abort("Thanks for visiting!")
+        abort("Thanks for visiting the Breaking Bad CLI! I hope to see you again soon.")
     end
 
     class InputError < StandardError
