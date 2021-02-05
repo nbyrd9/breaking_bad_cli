@@ -1,5 +1,4 @@
 class Api 
-    attr_accessor :name, :birthday, :occupation, :status, :appearance, :portrayed, :img, :nickname
     
     def self.get_character_info
         url = "https://www.breakingbadapi.com/api/characters"   

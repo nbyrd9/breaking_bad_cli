@@ -16,7 +16,7 @@ class Cli
     end
 
     def sub_heading
-        puts "Please enter your favorite character from Breaking Bad! Remember to type the first and last name.".colorize(:yellow)
+        puts "Please select a character from the above list. Remember to type the first and last name!".colorize(:yellow)
         input = gets.chomp
         new_character = Character.find_by_name(input)
         if new_character 
@@ -94,8 +94,12 @@ class Cli
         if input == "Yes"
             sub_heading
         else input == "No"
-            puts "Thanks for stopping by!".colorize(:green)
+            exit_cli
         end
+    end
+
+    def exit_cli
+        abort("Thanks for visiting!")
     end
 
     class InputError < StandardError
