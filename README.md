@@ -8,17 +8,11 @@ and even links to images of the show. Have fun learning about TV's most iconic s
 
 
 ## Install Instructions
-Add the following line to your application's Gemfile:
+Fork and clone this repository. CD (change directory) into the directory.
 
-```gem 'Breaking-Bad-CLI'```
+Exectute:
 
-Execute by typing the following:
-
-```$ bundle  ```
-
-If you prefer, install yourself:
-
-```gem install 'Breaking-Bad-CLI'```
+```bundle install```
 
 ## Usage
 
