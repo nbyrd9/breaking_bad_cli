@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome to the Breaking Bad CLI! You can find all sorts of information about every single character to appear on the show. This app was created to provide Breaking Bad's
+Welcome to the Breaking Bad CLI! You can find all sorts of information about every single character to appear on both Breaking Bad AND the prequel, Better Call Saul. This app was created to provide Breaking Bad's
 biggest fans the opportunity to learn various details about their favorite characters. This gem will provide the ability to see birthdays, nicknames, the actors/actresses that portrayed them,
 and even links to images of the show. Have fun learning about TV's most iconic show, and don't forget to tread lightly.
 
