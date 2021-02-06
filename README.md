@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome to the Breaking Bad CLI! You can find  all sorts of infomartion about every single character to appear on the show. This app was created to provide Breaking Bad's
+Welcome to the Breaking Bad CLI! You can find all sorts of information about every single character to appear on the show. This app was created to provide Breaking Bad's
 biggest fans the opportunity to learn various details about their favorite characters. This gem will provide the ability to see birthdays, nicknames, the actors/actresses that portrayed them,
 and even links to images of the show. Have fun learning about TV's most iconic show, and don't forget to tread lightly.
 
@@ -10,13 +10,13 @@ and even links to images of the show. Have fun learning about TV's most iconic s
 ## Install Instructions
 Fork and clone this repository. CD (change directory) into the directory.
 
-Exectute:
+Execute:
 
 ```bundle install```
 
 ## Usage
 
-Type the following into your terminal, and then follow the onscreen prompts
+Type the following into your terminal, and then follow the onscreen prompts:
 
 ```ruby bin/run```
 
