@@ -29,6 +29,7 @@ class Cli
                 puts error.message
                 input = gets.chomp
                 if input == "Yes"
+                    view_char_list
                     self.sub_heading
                 else
                     exit_cli

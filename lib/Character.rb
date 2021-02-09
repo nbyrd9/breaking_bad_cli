@@ -3,8 +3,8 @@ class Character
 
     @@all = []
 
-    def initialize(hash)
-         hash.each do |key, value|
+    def initialize(info_hash)
+         info_hash.each do |key, value|
             self.send("#{key}=" , value)
         end
         @@all << self
